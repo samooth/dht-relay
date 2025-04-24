@@ -1,4 +1,4 @@
-# Hyperswarm Relay
+# Spaceswarm Relay
 
 > :test_tube: This project is still experimental. **Do not use it in production**.
 
@@ -29,7 +29,7 @@ import DHT from 'spaceswarm-dht-relay'
 const dht = new DHT(stream)
 ```
 
-From here, the API matches that of the Hyperswarm DHT: <https://github.com/samooth/spacedht#api>
+From here, the API matches that of the Spaceswarm DHT: <https://github.com/samooth/spacedht#api>
 
 ### Transports
 

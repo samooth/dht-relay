@@ -1,4 +1,4 @@
-import Hypercore from 'hypercore'
+import Spacecore from 'bitspacecore'
 import RAM from 'random-access-memory'
 
 export async function withCore (options, cb) {
@@ -7,7 +7,7 @@ export async function withCore (options, cb) {
     options = {}
   }
 
-  const core = new Hypercore(RAM, options)
+  const core = new Spacecore(RAM, options)
   await core.ready()
 
   try {

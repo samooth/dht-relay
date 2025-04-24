@@ -1,7 +1,7 @@
-import Hyperswarm from 'hyperswarm'
+import Spaceswarm from 'spaceswarm'
 
 export async function withSwarm (dht, cb) {
-  const swarm = new Hyperswarm({ dht })
+  const swarm = new Spaceswarm({ dht })
 
   try {
     await cb(swarm)

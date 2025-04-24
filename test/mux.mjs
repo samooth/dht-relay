@@ -1,5 +1,5 @@
 import Protomux from 'protomux'
-import SecretStream from '@hyperswarm/secret-stream'
+import SecretStream from 'spaceswarm-secret-stream'
 import { none } from 'compact-encoding'
 import test from 'brittle'
 

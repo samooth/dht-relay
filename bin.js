@@ -3,7 +3,7 @@
 const http = require('http')
 const https = require('https')
 const fs = require('fs')
-const DHT = require('hyperdht')
+const DHT = require('spacedht')
 const { WebSocketServer } = require('ws')
 const { relay } = require('spaceswarm-dht-relay')
 const Stream = require('spaceswarm-dht-relay/ws')
