@@ -2,12 +2,12 @@
 
 > :test_tube: This project is still experimental. **Do not use it in production**.
 
-Relaying the Hyperswarm DHT over framed streams to bring decentralized networking to everyone.
+Relaying the Spaceswarm DHT over framed streams to bring decentralized networking to everyone.
 
 ## Installation
 
 ```sh
-npm install @hyperswarm/dht-relay
+npm install spaceswarm-dht-relay
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm install @hyperswarm/dht-relay
 On the relaying side:
 
 ```js
-import DHT from 'hyperdht'
-import { relay } from '@hyperswarm/dht-relay'
+import DHT from 'spacedht'
+import { relay } from 'spaceswarm-dht-relay'
 
 relay(new DHT(), stream)
 ```
@@ -24,12 +24,12 @@ relay(new DHT(), stream)
 On the relayed side:
 
 ```js
-import DHT from '@hyperswarm/dht-relay'
+import DHT from 'spaceswarm-dht-relay'
 
 const dht = new DHT(stream)
 ```
 
-From here, the API matches that of the Hyperswarm DHT: <https://github.com/holepunchto/hyperdht#api>
+From here, the API matches that of the Hyperswarm DHT: <https://github.com/samooth/spacedht#api>
 
 ### Transports
 
@@ -38,16 +38,16 @@ As a convenience, we provide stream wrappers for common transport protocols. The
 <details>
 <summary>TCP</summary>
 
-The TCP wrapper is a re-export of <https://github.com/holepunchto/hyperswarm-secret-stream> which adds both framing and encryption.
+The TCP wrapper is a re-export of <https://github.com/samooth/spaceswarm-secret-stream> which adds both framing and encryption.
 
 On the relaying side:
 
 ```js
 import net from 'net'
 
-import DHT from 'hyperdht'
-import { relay } from '@hyperswarm/dht-relay'
-import Stream from '@hyperswarm/dht-relay/tcp'
+import DHT from 'spacedht'
+import { relay } from 'spaceswarm-dht-relay'
+import Stream from 'spaceswarm-dht-relay/tcp'
 
 const dht = new DHT()
 const server = net.createServer().listen(8080)
@@ -62,8 +62,8 @@ On the relayed side:
 ```js
 import net from 'net'
 
-import DHT from '@hyperswarm/dht-relay'
-import Stream from '@hyperswarm/dht-relay/tcp'
+import DHT from 'spaceswarm-dht-relay'
+import Stream from 'spaceswarm-dht-relay/tcp'
 
 const socket = net.connect(8080)
 const dht = new DHT(new Stream(true, socket))
@@ -80,9 +80,9 @@ On the relaying side:
 ```js
 import { WebSocketServer } from 'ws'
 
-import DHT from 'hyperdht'
-import { relay } from '@hyperswarm/dht-relay'
-import Stream from '@hyperswarm/dht-relay/ws'
+import DHT from 'spacedht'
+import { relay } from 'spaceswarm-dht-relay'
+import Stream from 'spaceswarm-dht-relay/ws'
 
 const dht = new DHT()
 const server = new WebSocketServer({ port: 8080 })
@@ -95,8 +95,8 @@ server.on('connection', (socket) => {
 On the relayed side:
 
 ```js
-import DHT from '@hyperswarm/dht-relay'
-import Stream from '@hyperswarm/dht-relay/ws'
+import DHT from 'spaceswarm-dht-relay'
+import Stream from 'spaceswarm-dht-relay/ws'
 
 const socket = new WebSocket('ws://localhost:8080')
 const dht = new DHT(new Stream(true, socket))
@@ -108,7 +108,7 @@ const dht = new DHT(new Stream(true, socket))
 You can start a DHT relay in the command line:
 
 ```sh
-npm install -g @hyperswarm/dht-relay
+npm install -g spaceswarm-dht-relay
 ```
 
 Run a DHT relay server:
